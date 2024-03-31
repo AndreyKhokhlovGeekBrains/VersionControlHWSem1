@@ -56,6 +56,10 @@ public class Service {
         return builder.checkAnimalTypeDescription(description);
     }
 
+    public String printAnimalTypes() {
+        return builder.printAnimalTypeDescriptions();
+    }
+
     public String deleteMember(int animalId) {
         Iterator<HumanFriendsMember> iterator = humanFriendsRegistry.iterator();
 

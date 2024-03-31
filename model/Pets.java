@@ -6,8 +6,8 @@ import java.util.Map;
 
 public class Pets {
     private Map<Integer, String> pets = new HashMap<>();
-    private Integer id;
-    private String description;
+    // private Integer id;
+    // private String description;
     private Integer animalId;
     private String animalDescription;
     private static final String petType = "Pets";
@@ -79,6 +79,20 @@ public String getDescriptionByID(Integer id) {
 
 public Map<Integer, String> getPetsList() {
     return pets;
+}
+
+public String printPetTypes() {
+    StringBuilder sb = new StringBuilder();
+
+    for (int i = 0; i < pets.size(); i++) {
+        if (i < pets.size() -1 ) {
+            sb.append(pets.get(i+1)).append(", ");
+        } else {
+            sb.append(pets.get(i+1));
+        }
+    }
+
+    return sb.toString();
 }
 
 public String getPetType () {

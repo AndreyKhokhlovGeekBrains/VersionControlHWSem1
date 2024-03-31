@@ -74,7 +74,8 @@ public class ConsoleUI implements View {
             if (presenter.checkAnimalTypeDescription(animalTypeDescription)) {
                 check = false;
             } else {
-                System.out.println("Please enter correct animal type description");
+                System.out.println("Please enter correct animal type description:");
+                answer(presenter.printAnimalTypes());
             }
         }
 

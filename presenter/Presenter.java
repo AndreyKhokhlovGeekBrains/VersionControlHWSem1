@@ -35,6 +35,10 @@ public class Presenter {
         return service.checkAnimalTypeDescription(description);
     }
 
+    public String printAnimalTypes() {
+        return service.printAnimalTypes();
+    }
+
     public void deleteMember(int animalId) {
         service.deleteMember(animalId);
         String answer = service.getHumanFriendsRegistryInfo();

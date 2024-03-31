@@ -82,4 +82,14 @@ public class HumanFriendsMemberBuilder {
         return false;
     }
 
+    public String printAnimalTypeDescriptions() {
+        Pets pets = new Pets();
+        PackAnimals packAnimals = new PackAnimals();
+        StringBuilder sb = new StringBuilder();
+
+        sb.append(pets.printPetTypes()).append(", ").append(packAnimals.printPackAnimalTypes());
+
+        return sb.toString();
+    }
+
 }
