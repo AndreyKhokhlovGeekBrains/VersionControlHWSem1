@@ -204,7 +204,7 @@ commands VARCHAR(100)
 );
 
 INSERT INTO donkeys (name, birthdate, commands) VALUES
-('Eeyore', '2017-09-18', 'Walk, Carry Load, Bray'),
+('Eeyore', '2017-09-18', 'Walk, Carry, Load, Bray'),
 ('Burro', '2019-01-23', 'Walk, Bray, Kick');
 
 ALTER TABLE donkeys ADD COLUMN pack_animal_id INT NOT NULL;
