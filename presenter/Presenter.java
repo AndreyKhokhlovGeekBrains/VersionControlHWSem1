@@ -70,6 +70,12 @@ public class Presenter {
         view.answer(answer);
     }
 
+    public void sortById() {
+        service.sortById();
+        String answer = service.getHumanFriendsRegistryInfo();
+        view.answer(answer);
+    }
+
     public void countByAnimalType(String animalType) {
         String answer = service.countByAnimalType(animalType);
         view.answer(answer);

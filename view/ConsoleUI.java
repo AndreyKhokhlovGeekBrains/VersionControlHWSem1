@@ -188,6 +188,10 @@ public class ConsoleUI implements View {
         presenter.sortByBirthdate();
     }
 
+    public void sortById() {
+        presenter.sortById();
+    }
+
     public void save() {
         presenter.save();
     }

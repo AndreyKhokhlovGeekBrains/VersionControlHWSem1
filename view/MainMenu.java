@@ -12,6 +12,7 @@ import view.commands.Exit;
 import view.commands.PrintCommands;
 import view.commands.PrintRegistry;
 import view.commands.SortByBirthdate;
+import view.commands.SortById;
 
 public class MainMenu {
     private List<Command> commandsList;
@@ -25,6 +26,7 @@ public class MainMenu {
         commandsList.add(new AddCommand(view));
         commandsList.add(new DeleteCommand(view));
         commandsList.add(new SortByBirthdate(view));
+        commandsList.add(new SortById(view));
         commandsList.add(new CountByAnimalType(view));
         commandsList.add(new Exit(view));
     }

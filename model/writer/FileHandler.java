@@ -8,7 +8,7 @@ import java.io.ObjectOutputStream;
 import model.registry.HumanFriends;
 
 public class FileHandler implements Writable{
-    private String filePath = "C:\\Users\\khokh\\Desktop\\Итоговая контрольная\\FinalControlWork\\model\\writer\\HumanFriends.txt";
+    private String filePath = "C:\\Users\\a.khokhlov\\Desktop\\Java\\CW\\FinalControlWork\\model\\writer\\HumanFriends.txt";
     
     public boolean save(HumanFriends tree) {
         try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(filePath))) {

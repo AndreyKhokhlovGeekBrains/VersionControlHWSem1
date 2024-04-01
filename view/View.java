@@ -10,6 +10,7 @@ public interface View {
     void addNewCommand();
     void deleteCommand();
     void sortByBirthdate();
+    void sortById();
     void countByAnimalType();
     void exit(); 
 }

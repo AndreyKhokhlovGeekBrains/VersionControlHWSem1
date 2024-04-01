@@ -122,6 +122,10 @@ public class Service {
         humanFriendsRegistry.sortByBirthdate();
      }
 
+     public void sortById() {
+        humanFriendsRegistry.sortById();
+     }
+
      public String countByAnimalType(String animalDescription) {
         StringBuilder sb = new StringBuilder();
         HumanFriends<HumanFriendsMember> selectedAnimals = new HumanFriends<>();

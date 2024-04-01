@@ -8,6 +8,7 @@ import model.member.HumanFriendsItem;
 
 public class HumanFriends<HF extends HumanFriendsItem> implements Serializable, Iterable<HF> {
     private List<HF> humanFriends;
+    public static final long serialVersionUID = 1L;
 
     public HumanFriends(){
         this(new ArrayList<>());
@@ -69,6 +70,10 @@ public class HumanFriends<HF extends HumanFriendsItem> implements Serializable, 
 
     public void sortByBirthdate() {
         humanFriends.sort(new HumanFriendsCompareByBirthDate<>());
+    }
+
+    public void sortById() {
+        humanFriends.sort(new HumanFriendsComareById<>());
     }
 
 }
