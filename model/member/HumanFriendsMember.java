@@ -70,6 +70,10 @@ public LocalDate getBirthDate(){
     return birthdate;
 };
 
+public void setBirthDate(LocalDate birthDate) {
+    this.birthdate = birthDate;
+}
+
 public Integer getId() {
     return id;
 }

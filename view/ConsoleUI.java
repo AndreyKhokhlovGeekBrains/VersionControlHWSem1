@@ -200,5 +200,53 @@ public class ConsoleUI implements View {
         presenter.getHumanFriendsRegistryInfo();
     }
 
+    public void changeBirthdate() {
+        boolean myCheck = true;
+        boolean flag = false;
+        HumanFriendsMember selectedMember = null;
+        int animalId = 0;
+
+        System.out.println("Type an animal ID you want to change the birthdate of: ");
+        while(myCheck) {
+            String selectedChoice = scanner.nextLine();
+            try {
+                animalId = Integer.parseInt(selectedChoice);
+                flag = true;
+            } catch (Exception e) {
+                System.out.println("Please enter a valid number.");
+            }
+
+            if (idExists(animalId)) {
+                selectedMember = presenter.getMember(animalId);
+                myCheck = false;
+            } else if (!idExists(animalId) && flag) {
+                System.out.println("There is no animal with the specified id. Choose a valid id.");
+            }
+        }
+        
+        System.out.println("Enter date of birth: ");
+        LocalDate birthdate = dateBuilder.buildDate();
+        presenter.changeBirthdate(selectedMember, birthdate);
+    }
+
+// Check the existence of a HumanFriends ID
+    public boolean idExists(int id) {
+        HumanFriends<HumanFriendsMember> humanFriendsRegistry = presenter.getHumanFriendsRegistry();
+        int[] animalIds = new int[humanFriendsRegistry.getSize()];
+        int i = 0;
+
+        for (HumanFriendsMember member: humanFriendsRegistry) {
+            animalIds[i++] = member.getId();
+        }
+
+        for (int j = 0; j < animalIds.length; j++) {
+            if (animalIds[j] == id) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
 
 }

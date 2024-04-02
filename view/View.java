@@ -12,5 +12,6 @@ public interface View {
     void sortByBirthdate();
     void sortById();
     void countByAnimalType();
+    void changeBirthdate();
     void exit(); 
 }

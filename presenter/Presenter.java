@@ -81,4 +81,13 @@ public class Presenter {
         view.answer(answer);
     }
 
+    public void changeBirthdate(HumanFriendsMember member, LocalDate birthDate) {
+        String answer = service.changeBirthdate(member, birthDate);
+        view.answer(answer);
+    }
+
+    public HumanFriendsMember getMember(int id) {
+        return service.getMember(id);
+    }
+
 }
