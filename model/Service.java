@@ -113,6 +113,11 @@ public class Service {
         return member.getInfo();
      }
 
+     public String changeName(HumanFriendsMember member, String newName) {
+        member.setName(newName);
+        return member.getInfo();
+     }
+
      public String deleteCommand(HumanFriendsMember member, int selectedCommandId) {
         member.getCommands();
         member.deleteCommand(selectedCommandId);

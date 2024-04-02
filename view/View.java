@@ -13,5 +13,6 @@ public interface View {
     void sortById();
     void countByAnimalType();
     void changeBirthdate();
+    void changeName();
     void exit(); 
 }

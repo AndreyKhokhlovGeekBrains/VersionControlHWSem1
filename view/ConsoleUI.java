@@ -39,10 +39,10 @@ public class ConsoleUI implements View {
     }
 
     private void scanMenu() {
-        String choiceStr = scanner.nextLine();
         int maxValue = menu.size();
 
         while(true){
+            String choiceStr = scanner.nextLine();
             try {
                 int choice = Integer.parseInt(choiceStr);
                 if (choice >= 1 && choice <= maxValue) {
@@ -200,13 +200,13 @@ public class ConsoleUI implements View {
         presenter.getHumanFriendsRegistryInfo();
     }
 
-    public void changeBirthdate() {
+    private HumanFriendsMember selectHumanFriendsMember() {
         boolean myCheck = true;
         boolean flag = false;
         HumanFriendsMember selectedMember = null;
         int animalId = 0;
 
-        System.out.println("Type an animal ID you want to change the birthdate of: ");
+        System.out.println("Type an animal ID you want to change: ");
         while(myCheck) {
             String selectedChoice = scanner.nextLine();
             try {
@@ -223,14 +223,25 @@ public class ConsoleUI implements View {
                 System.out.println("There is no animal with the specified id. Choose a valid id.");
             }
         }
-        
+        return selectedMember;
+    }
+
+    public void changeBirthdate() {
+        HumanFriendsMember selectedMember = selectHumanFriendsMember();
         System.out.println("Enter date of birth: ");
         LocalDate birthdate = dateBuilder.buildDate();
         presenter.changeBirthdate(selectedMember, birthdate);
     }
 
+    public void changeName() {
+        HumanFriendsMember selectedMember = selectHumanFriendsMember();
+        System.out.println("Enter a new name: ");
+        String newName = scanner.nextLine();
+        presenter.changeName(selectedMember, newName);
+    }
+
 // Check the existence of a HumanFriends ID
-    public boolean idExists(int id) {
+    private boolean idExists(int id) {
         HumanFriends<HumanFriendsMember> humanFriendsRegistry = presenter.getHumanFriendsRegistry();
         int[] animalIds = new int[humanFriendsRegistry.getSize()];
         int i = 0;

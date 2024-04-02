@@ -86,6 +86,11 @@ public class Presenter {
         view.answer(answer);
     }
 
+    public void changeName(HumanFriendsMember member, String newName) {
+        String answer = service.changeName(member, newName);
+        view.answer(answer);
+    }
+
     public HumanFriendsMember getMember(int id) {
         return service.getMember(id);
     }

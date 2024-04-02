@@ -40,13 +40,19 @@ public class HumanFriends<HF extends HumanFriendsItem> implements Serializable, 
     }
 
     public String getInfo() {
+        int cnt = 1;
         StringBuilder sb = new StringBuilder();
         sb.append("In the registry: ");
         sb.append(humanFriends.size());
         sb.append(" animals: \n");
         for(HF member: humanFriends){
-            sb.append(member);
-            sb.append("\n");
+            if(cnt != humanFriends.size()) {
+                sb.append(member);
+                sb.append("\n");
+            } else {
+                sb.append(member);
+            }
+            cnt++;
         }
         return sb.toString();
     }
