@@ -4,6 +4,8 @@ import java.util.List;
 
 import view.commands.AddCommand;
 import view.commands.AddHumanFriendsMember;
+import view.commands.ChangeBirthDate;
+import view.commands.ChangeName;
 import view.commands.Command;
 import view.commands.CountByAnimalType;
 import view.commands.DeleteCommand;
@@ -28,6 +30,8 @@ public class MainMenu {
         commandsList.add(new SortByBirthdate(view));
         commandsList.add(new SortById(view));
         commandsList.add(new CountByAnimalType(view));
+        commandsList.add(new ChangeBirthDate(view));
+        commandsList.add(new ChangeName(view));
         commandsList.add(new Exit(view));
     }
 
@@ -35,7 +39,7 @@ public class MainMenu {
         StringBuilder sb = new StringBuilder();
         sb.append("\nList of commands:\n");
         for (int i = 0; i < commandsList.size(); i++) {
-            sb.append(i + 1)
+            sb.append(String.format("%02d", (i + 1)))
                     .append(". ")
                     .append(commandsList.get(i).getDescription())
                     .append("\n");

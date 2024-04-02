@@ -108,6 +108,16 @@ public class Service {
         return selectedMember.getInfo();
      }
 
+     public String changeBirthdate(HumanFriendsMember member, LocalDate date) {
+        member.setBirthDate(date);
+        return member.getInfo();
+     }
+
+     public String changeName(HumanFriendsMember member, String newName) {
+        member.setName(newName);
+        return member.getInfo();
+     }
+
      public String deleteCommand(HumanFriendsMember member, int selectedCommandId) {
         member.getCommands();
         member.deleteCommand(selectedCommandId);
@@ -140,6 +150,17 @@ public class Service {
         sb.append(selectedAnimals.getInfo());
         sb.append("of the type " + animalDescription + ".");
         return sb.toString();
+     }
+
+     public HumanFriendsMember getMember(int id) {
+        HumanFriendsMember selectedMember = null;
+        for (HumanFriendsMember member: humanFriendsRegistry) {
+            if(member.getId() == id) {
+                selectedMember = member;
+                break;
+            }
+        }
+        return selectedMember;
      }
 
 }

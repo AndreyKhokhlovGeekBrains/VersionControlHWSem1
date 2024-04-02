@@ -61,6 +61,10 @@ public String getName(){
     return name;
 };
 
+public void setName(String name) {
+    this.name = name;
+}
+
 public Period getAge(){
     Period period = Period.between(LocalDate.now(), birthdate);
     return period;
@@ -69,6 +73,10 @@ public Period getAge(){
 public LocalDate getBirthDate(){
     return birthdate;
 };
+
+public void setBirthDate(LocalDate birthDate) {
+    this.birthdate = birthDate;
+}
 
 public Integer getId() {
     return id;
