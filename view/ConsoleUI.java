@@ -39,10 +39,10 @@ public class ConsoleUI implements View {
     }
 
     private void scanMenu() {
-        String choiceStr = scanner.nextLine();
         int maxValue = menu.size();
 
         while(true){
+            String choiceStr = scanner.nextLine();
             try {
                 int choice = Integer.parseInt(choiceStr);
                 if (choice >= 1 && choice <= maxValue) {
